@@ -1,0 +1,79 @@
+1.建库建表
+
+mysql存储数据的分类：数值、日期/时间、字符串（字符）类型
+数值：整数类型[INT、BIGINT]、小数类型（浮点数类型）[FLOAT、DOUBLE]
+日期/时间：DATE YYYY-MM-DD 、 TIME HH:MM:SS 、 YEAR YYYY 、 DATETIME YYYY-MM-DD HH:MM:SS 、 TIMESTAMP YYYYMMDD HHMMSS(时间戳表示方式)
+字符串类型：CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM、SET
+CHAR：固定长度字符串	char(5)自动补充空字符
+VARCHAR：可变长度字符串	varchar(5)
+enum：选项取值   enum('男','女')
+
+创建表语法：
+creat table table_name(
+	字段名 数据类型 default,
+	字段名 数据类型 primary key auto_increment,
+	字段名 数据类型 not null,
+	constranint key_name unique(字段名)
+	);
+
+修改表：
+添加字段： alter table table_name add 字段名 数据类型；		-添加多个字段：alter table table_name add (字段名 数据类型,字段名 数据类型, ...);
+删除字段： alter table table_name drop 字段名；
+修改数据类型： alter table table_name modify 字段名 新数据类型；
+修改字段名： alter talbe table_name change 原字段名 新字段名 数据类型；
+查看表结构: desc table_name
+修改表名： rename table 旧表名 to 新表名;
+
+
+唯一约束键：
+1.要求被约束的字段不能有重复的值，可以为null
+2.可以有多个null
+3.一张表中可以存在多个唯一约束的字段
+constranint key_name unique(字段名)
+
+
+外键约束：
+constraint key_name foreign key (本表的字段名) references 外表名(要关联的字段名)
+
+
+创建库：
+create database school CHARACTER set utf8 COLLATE utf8_general_ci;
+character set : 数据库引用的字符集
+collate ： 数据库字符集的比较方式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+华硕冰骑士GTX 960-DC2OC-2GD5

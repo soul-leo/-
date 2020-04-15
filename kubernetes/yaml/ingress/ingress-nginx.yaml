@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-nginx01
+spec:
+  rules:
+    - host: www.soul-yu1.com
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: svc1
+            servicePort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-nginx02
+spec:
+  rules:
+    - host: www.soul-yu2.com
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: svc2
+            servicePort: 80

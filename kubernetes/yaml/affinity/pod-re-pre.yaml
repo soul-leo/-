@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pod01
+  labels:
+    app: pod01
+spec:
+  containers:
+  - name: pod
+    image: wangyanglinux/myapp:v1
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+        matchExpressions:
+        - key: app
+          operator: In
+          values:
+          - pod01
+      topologyKey: kubernetes.io/hostname
+#    podAntiAffinity:
+#      preferredDuringSchedulingIgnoredDuringExecution:
+#      - weight: 1
+#        podAffinityTerm:
+#          labelSelector:
+#            matchExpressions:
+#            - operator: In
+#              key: app
+#              values:
+#              - pod02
+#          topologyKey: kubernetes.io/hostname

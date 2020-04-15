@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-https
+spec:
+  tls:
+    - hosts:
+      - www.soul-yu3.com
+      secretName: tls-secret
+  rules:
+    - host: www.soul-yu3.com
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: svc3
+            servicePort: 80

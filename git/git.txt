@@ -1,0 +1,28 @@
+git init 在本地创建git仓库
+  
+git clone http线上仓库地址 ；克隆线上仓库到本地
+提交暂存区、提交本地仓库、提交线上仓库、拉取线上仓库
+git add
+git commit -m "zhu_shi"
+git push
+git pull
+报错了改conf下的配置文件在http地址前加个 用户名:密码@
+
+git通过ssh公私钥连接
+ssh-keygem -t rsa -C "邮箱地址"  创建公私钥
+上传公钥 id_rsa.pub
+git clone ssh的线上仓库地址
+
+git的分支管理
+查看分支：git branch
+创建分支：git branch 分支名
+切换分支：git checkout 分支名  （git checkout -b 分支名  创建并切换）
+删除分支：git branch -d 分支名
+合并分支：git merge 要被合并的分支名
+
+忽略文件上传
+创建一个文件.gitignore,规则对当前目录及其子目录生效。
+/dir/		过滤掉整个文件夹
+*.zip		过滤所有zip文件
+/dir/do.c	过滤掉具体的某个文件
+!index.html	不过滤具体的某个文件

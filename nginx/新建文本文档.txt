@@ -1,0 +1,18 @@
+nginx的内置变量：
+$uri : 当前请求的uri，不带参数
+$request_uri : 请求的uri，带完整的参数
+$host : http请求报文中的host首部，如果没有则以处理此请求的虚拟主机的主机名代替
+$hostname : nginx服务器的主机名
+$remote_addr : 客户端ip
+$remote_port : 客户端端口
+$remote_user : 使用用户认证时客户端用户输入的用户名
+$request_filename : 用户请求中的uri经过本地root或alias转换后映射的本地文件路径
+$request_method : 请求方法 GET POST PUT
+$server_addr : 服务器ip
+$server_name : 服务器名称
+$server_port : 服务器端口
+$server_protocol : 服务器向客户端发送相应时的协议，如http/1.1 http/1.0
+$scheme : 在请求中使用scheme，如http://xxx.com中的http
+$http_HEADER : 匹配请求报文中指定的HEADER
+$http_host : 匹配请求报文中的host首部
+$document_root : 当前请求映射到的root配置
